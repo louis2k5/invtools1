@@ -1,0 +1,72 @@
+name: InvTools
+version: 1.0.0
+main: de.invtools.InvTools
+api-version: "26.3"
+description: Enderchest, große Enderchest, Inventar- und Rüstungsansicht sowie Inventar leeren
+commands:
+  ec:
+    description: Öffnet deine Enderchest oder die eines anderen Spielers
+    usage: /ec [Spieler]
+  bec:
+    description: Öffnet deine große Enderchest (54 Slots) oder die eines anderen Spielers
+    usage: /bec [Spieler]
+  invsee:
+    description: Zeigt dein Inventar oder das eines anderen Spielers
+    usage: /invsee [Spieler]
+    aliases: [inv]
+  bodysee:
+    description: Zeigt deine Rüstung oder die eines anderen Spielers
+    usage: /bodysee [Spieler]
+    aliases: [bs]
+  invclear:
+    description: Leert dein gesamtes Inventar oder das eines anderen Spielers
+    usage: /invclear [Spieler]
+permissions:
+  invtools.ec:
+    description: /ec für die eigene Enderchest
+    default: true
+  invtools.ec.others:
+    description: /ec für andere Spieler
+    default: op
+  invtools.bec:
+    description: /bec für die eigene große Enderchest
+    default: true
+  invtools.bec.others:
+    description: /bec für andere Spieler
+    default: op
+  invtools.invsee:
+    description: /invsee bzw. /inv für das eigene Inventar
+    default: true
+  invtools.invsee.others:
+    description: /invsee bzw. /inv für andere Spieler
+    default: op
+  invtools.bodysee:
+    description: /bodysee bzw. /bs für die eigene Rüstung
+    default: true
+  invtools.bodysee.others:
+    description: /bodysee bzw. /bs für andere Spieler
+    default: op
+  invtools.invclear:
+    description: /invclear für das eigene Inventar
+    default: true
+  invtools.invclear.others:
+    description: /invclear für andere Spieler
+    default: op
+  invtools.edit.others:
+    description: Items aus Inventar, Rüstung, Enderchest und großer Enderchest anderer Spieler nehmen oder dort ablegen
+    default: op
+  invtools.*:
+    description: Alle InvTools-Rechte
+    default: op
+    children:
+      invtools.ec: true
+      invtools.ec.others: true
+      invtools.bec: true
+      invtools.bec.others: true
+      invtools.invsee: true
+      invtools.invsee.others: true
+      invtools.bodysee: true
+      invtools.bodysee.others: true
+      invtools.invclear: true
+      invtools.invclear.others: true
+      invtools.edit.others: true
